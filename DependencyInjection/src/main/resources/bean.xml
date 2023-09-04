@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <bean  id="bike" class="org.example.Bike">
+<!--        when we set the color using setter method-->
+<!--        <property name="color" value="Red"/>-->
+<!--        when we are using a constructor for color value-->
+<!--        <constructor-arg name="color" value="Yellow"/>-->
+<!--    example2-->
+        <constructor-arg name="engine" >
+            <bean class="org.example.Engine"/>
+        </constructor-arg>
+
+
+    </bean>
+</beans>
+
+<!--
+ internal working
+Bike obj = new Bike();
+obj.setColor("Red");when i use property
+>-->
+<!--
+ internal working example 2
+Bike obj = new Bike();
+obj.engine=new Engine();
+>-->
